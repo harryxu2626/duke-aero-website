@@ -1,0 +1,23 @@
+*,
+html,
+body {
+  -ms-overflow-style: none;
+  box-sizing: border-box;
+  margin: 0;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+body.light-mode {
+  background-color: #fff;
+  color: #202454;
+  transition: background-color 0.3s ease;
+}
+
+body.dark-mode {
+  background-color: #1a1919;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+
