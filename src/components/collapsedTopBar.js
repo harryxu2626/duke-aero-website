@@ -8,9 +8,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import Collapse from "@mui/material/Collapse";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
-import useDarkMode from "use-dark-mode";
 import MenuIcon from "@mui/icons-material/Menu";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 import logo from "../images/aerocropped_clean.png";
 
@@ -26,7 +24,6 @@ const CollapsedTopBar = (props) => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [aboutOpen, setAboutOpen] = React.useState(false);
   const [pastOpen, setPastOpen] = React.useState(false);
-  const [sysPref, setSysPref] = React.useState(false)
 
   const handleAboutClick = () => {
     setAboutOpen(!aboutOpen);

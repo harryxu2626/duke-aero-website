@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Container from "@mui/material/Container";
@@ -6,7 +6,7 @@ import Container from "@mui/material/Container";
 import useDarkMode from "use-dark-mode";
 import useIsClient from "./isClient"
 
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 
 import CollapsedTopBar from "./collapsedTopBar";

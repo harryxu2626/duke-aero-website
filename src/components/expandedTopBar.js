@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 
@@ -12,7 +12,7 @@ import useDarkMode from "use-dark-mode";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
 
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles";
 import { lightTheme, darkTheme } from "./theme"
 
 import logo from "../images/aerocropped_clean.png";
@@ -35,18 +35,12 @@ const menuButtonStyle = {
 };
 
 
-function useForceUpdate(){
-  const [value, setValue] = useState(0); // integer state
-  return () => setValue(value => value + 1); // update the state to force render
-}
-
 const ExpandedTopBar = (props) => {
   const [darkModeValue, setDarkModeValue] = React.useState(false)
   React.useEffect(()=>{
     setDarkModeValue(window.matchMedia('(prefers-color-scheme: dark)').matches);
     
   },[])
-  useForceUpdate();
   const darkMode = useDarkMode(darkModeValue);
 
   if(darkMode.value !== darkModeValue){
