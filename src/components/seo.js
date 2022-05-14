@@ -4,13 +4,13 @@ import { Helmet } from "react-helmet";
 import { useLocation } from "@reach/router";
 import { useStaticQuery, graphql } from "gatsby";
 
-const SEO = ({ title, description, image, article }) => {
+const SEO = ({ title, description, image, titleTemplate }) => {
   const { pathname } = useLocation();
   const { site } = useStaticQuery(query);
 
   const {
     defaultTitle,
-    titleTemplate,
+    defaultTitleTemplate,
     defaultDescription,
     siteUrl,
     defaultImage,
@@ -19,28 +19,46 @@ const SEO = ({ title, description, image, article }) => {
 
   const seo = {
     title: title || defaultTitle,
+    titleTemplate: titleTemplate || defaultTitleTemplate,
     description: description || defaultDescription,
     image: `${siteUrl}${image || defaultImage}`,
     url: `${siteUrl}${pathname}`,
+    keywords: keywords,
   };
 
   return (
-    <Helmet title={seo.title} titleTemplate={titleTemplate}>
-      <meta name="description" content={seo.description} />
-      <meta name="image" content={seo.image} />
-
-      {seo.url && <meta property="og:url" content={seo.url} />}
-
-      {(article ? true : null) && <meta property="og:type" content="article" />}
-
-      {seo.title && <meta property="og:title" content={seo.title} />}
-
-      {seo.description && (
-        <meta property="og:description" content={seo.description} />
-      )}
-
-      {seo.image && <meta property="og:image" content={seo.image} />}
-    </Helmet>
+    <Helmet
+      defer={false}
+      title={seo.title}
+      titleTemplate={seo.titleTemplate}
+      htmlAttributes={{ lang: "en" }}
+      meta={[
+              {
+                property: `og:title`,
+                content: seo.title,
+              },
+              {
+                property: `og:siteurl`,
+                content: seo.url,
+              },
+              {
+                name: `keywords`,
+                content: seo.keywords,
+              },
+              {
+                property: `og:description`,
+                content: seo.description,
+              },
+              {
+                name: `description`,
+                content: seo.description,
+              },
+              {
+                property: `og:type`,
+                content: `website`,
+              }
+            ]}
+    />
   );
 };
 
@@ -65,7 +83,7 @@ const query = graphql`
     site {
       siteMetadata {
         defaultTitle: title
-        titleTemplate
+        defaultTitleTemplate
         defaultDescription: description
         siteUrl: url
         defaultImage: image

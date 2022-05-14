@@ -49,7 +49,7 @@ const BtmAppBar = (props) => {
   if(!isClient){
     return null;
   }
-
+  console.log(darkMode);
   return (
     <div
       style={{
@@ -72,36 +72,36 @@ const BtmAppBar = (props) => {
           sx={{ top: "auto", bottom: 0 }}
         >
           <Toolbar>
-            <Typography color="secondary">&#169;2022 by Duke AERO</Typography>
+            <Typography color={darkMode.value ? "#fff" : "#202454"}>&#169;2022 by Duke AERO</Typography>
 
             <IconButton
               href="https://www.linkedin.com/company/duke-aero-society/"
               target="_blank"
               rel="noopener noreferrer"
-              color="secondary"
               style={menuButtonStyle}
               disableRipple
+              aria-label="linkedin"
             >
-              <LinkedInIcon />
+              <LinkedInIcon style={{color:darkMode.value ? "#fff" : "#202454"}}/>
             </IconButton>
 
             <IconButton
               href="https://www.instagram.com/duke_aero/?hl=en"
               target="_blank"
               rel="noopener noreferrer"
-              color="secondary"
               disableRipple
+              aria-label="instagram"
             >
-              <InstagramIcon />
+              <InstagramIcon style={{color:darkMode.value ? "#fff" : "#202454"}}/>
             </IconButton>
             <IconButton
               href="https://www.youtube.com/channel/UCooNA_Gx4-XZfQQfeg43qxA"
               target="_blank"
               rel="noopener noreferrer"
-              color="secondary"
               disableRipple
+              aria-label="youtube"
             >
-              <YouTubeIcon />
+              <YouTubeIcon style={{color:darkMode.value ? "#fff" : "#202454"}}/>
             </IconButton>
           </Toolbar>
         </AppBar>

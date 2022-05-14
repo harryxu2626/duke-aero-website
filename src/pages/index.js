@@ -6,6 +6,7 @@ import twoStageVid from "../videos/twoStageLaunch.mp4";
 
 import TopAppBar from "../components/topAppBar";
 import BtmAppBar from "../components/btmAppBar";
+import SEO from "../components/seo"
 import { Helmet } from "react-helmet";
 
 //styles
@@ -31,9 +32,7 @@ const Index = () => {
   return (
     <div style={pageStyles}>
       <CssBaseline />
-      <Helmet>
-        <title>Duke AERO</title>
-      </Helmet>
+      <SEO titleTemplate={`%s`}/>
       <TopAppBar />
 
       <div style={{ paddingTop: "2vh", justifyContent: "center" }}>

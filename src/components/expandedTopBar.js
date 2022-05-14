@@ -59,7 +59,7 @@ const ExpandedTopBar = (props) => {
   return (
     <>
     <ThemeProvider theme={darkModeValue ? darkTheme : lightTheme}>
-      <Link to="/">
+      <Link to="/" aria-label="link to homepage">
         <Box
           component="img"
           src={logo}
@@ -114,6 +114,7 @@ const ExpandedTopBar = (props) => {
       <IconButton
         onClick={darkMode.toggle}
         style={{ display: darkModeValue ? "none" : "flex", marginLeft: "2vw" }}
+        aria-label="dark mode button"
       >
         <DarkModeIcon />
       </IconButton>
@@ -124,6 +125,7 @@ const ExpandedTopBar = (props) => {
           color: "#fff",
           marginLeft: "2vw",
         }}
+        aria-label="light mode button"
       >
         <LightModeIcon />
       </IconButton>

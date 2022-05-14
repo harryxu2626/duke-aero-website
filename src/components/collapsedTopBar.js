@@ -43,7 +43,7 @@ const CollapsedTopBar = (props) => {
 
   return (
     <>
-      <Link to="/">
+      <Link to="/" aria-label="link to homepage">
         <Box
           component="img"
           src={logo}

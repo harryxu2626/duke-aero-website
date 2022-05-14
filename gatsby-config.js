@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Duke AERO`,
-    titleTemplate: `%s | Duke AERO`,
+    defaultTitleTemplate: `%s | Duke AERO`,
     description: `Duke University's High-Powered Rocketry Club`,
     url: `https://dukerocketry.com`,
     image: `./src/images/aerocropped.png`,
@@ -32,5 +32,6 @@ module.exports = {
         siteUrl: `https://dukerocketry.com`,
       },
     },
+    "gatsby-plugin-react-helmet",
   ],
 };
