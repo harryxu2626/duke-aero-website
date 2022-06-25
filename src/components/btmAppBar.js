@@ -49,7 +49,7 @@ const BtmAppBar = (props) => {
   if(!isClient){
     return null;
   }
-  console.log(darkMode);
+  // console.log(darkMode);
   return (
     <div
       style={{

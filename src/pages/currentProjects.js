@@ -66,14 +66,14 @@ const CurrentProjects = () => {
         ANSYS Fluent; simulation results were supplemented by ground tests of
         the recovery and avionics systems.
       </Typography>
-      
+
       <figure style={{ margin: 0, textAlign: "center" }}>
       <StaticImage
         objectFit="contain"
         placeholder="blurred"
         style={{ paddingTop: "5vh", justifyContent: "center" }}
         height={600}
-        src="../images/coach_30k_launch.jpg"
+        src="../images/coach_30k_launch.JPG"
         alt="coach 30k launch at bayboro"
       />
       <figcaption style={{textAlign:'center'}}>

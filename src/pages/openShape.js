@@ -52,6 +52,12 @@ const openShape = () => {
           "Ah shoot"
         </Typography>
       </Fade>
+
+      <Fade in={true} timeout={{ enter: 35000 }}>
+        <Typography variant="h4" style={typeStyle}>
+          "How else are you supposed to blow?"
+        </Typography>
+      </Fade>
     </div>
   );
 };
